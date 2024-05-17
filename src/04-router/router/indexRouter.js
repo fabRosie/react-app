@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, HashRouter,Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 // 引入组件
 import Films from '../views/Films'
@@ -14,13 +14,14 @@ const routes = [
     // when the URL matches this segment
     path: "/",
 
+
     // with this data loaded before rendering
-    loader: async ({ request, params }) => {
-      return fetch(
-        `/fake/api/teams/${params.teamId}.json`,
-        { signal: request.signal }
-      );
-    },
+    // loader: async ({ request, params }) => {
+    //   return fetch(
+    //     `/fake/api/teams/${params.teamId}.json`,
+    //     { signal: request.signal }
+    //   );
+    // },
 
     // performing this mutation when data is submitted to it
     action: async ({ request }) => {
@@ -44,14 +45,12 @@ const routes = [
   },
 ]
 
-const router = createBrowserRouter(routes, {
-  basename: '/app'
-})
+const router = createBrowserRouter(routes)
 
 export default class indexRouter extends Component {
   render() {
     return (
-        <RouterProvider basename="/app" router={router} />
+        <RouterProvider router={router} />
     )
   }
 }
