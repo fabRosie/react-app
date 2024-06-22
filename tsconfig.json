@@ -3,6 +3,15 @@
     "baseUrl": "./",
     "paths": {
       "views/*": ["src/views/*"]
+    },
+     "esModuleInterop": true,
+     //esModuleInterop 是 TypeScript 编译器中的一个选项，旨在改善与 CommonJS 和 AMD 模块的互操作性。它使得使用这些模块时的导入语法更接近原生 ES6 模块的体验，特别是在与默认导出（default export）和命名导出（named exports）之间的兼容性方面。
+     "allowImportingTsExtensions": true,
+    // allowImportingTsExtensions 允许在导入 TypeScript 文件时包含 .ts 扩展名。然而，这个选项只能在以下两种情况下使用：
+    // 1. noEmit 设置为 true。
+    // 2. emitDeclarationOnly 设置为 true。
+    // 这是因为 allowImportingTsExtensions 主要用于控制导入路径，而不是影响编译输出。当你只生成声明文件（emitDeclarationOnly）或完全不生成任何输出（noEmit），可以安全地使用此选项。
+     "noEmit": true,
+     "jsx": "react-jsx",
     }
-  }
 }

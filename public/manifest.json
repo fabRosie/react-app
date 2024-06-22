@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "衣柜管理",
+  "name": "衣柜管理平台",
+  "description": "管理你的衣柜",
   "icons": [
     {
       "src": "favicon.ico",
