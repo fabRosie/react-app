@@ -1,0 +1,8 @@
+.selected_img img {
+  width: 80px;
+  height: 60px;
+}
+
+.selected_img {
+  padding-bottom: 20px;
+}

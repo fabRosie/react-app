@@ -1,0 +1,55 @@
+.problem_modal {
+  position: absolute;
+  width: 500px;
+  max-height: 500px;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+
+
+.selected_text {
+  display: flex;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 26px;
+}
+.selected_text :global(.content) {
+  background-color: #E8F3FF;
+  flex: 1;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.selected_text :global(.title) {
+  width: 94px;
+  flex-shrink: 0;
+}
+.selected_text :global(.ant-form-item .ant-form-item-label) {
+  width: 94px;
+  flex-shrink: 0;
+}
+
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 17px 24px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  padding: 24px 24px 0;
+}
+
+.footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+}

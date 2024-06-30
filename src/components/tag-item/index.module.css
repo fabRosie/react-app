@@ -1,0 +1,25 @@
+.tagitem {
+  margin-bottom: 20px;
+  display: flex;
+  color: #1f1f1f;
+}
+.aiicon {
+  width: 24px;
+  padding-right: 3px;
+}
+
+.tagtitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  padding-bottom: 4px;
+}
+
+.gray {
+  color: #5c5c5c;
+  padding-right: 8px;
+}
+
+.tags {
+  line-height: 22px;
+}

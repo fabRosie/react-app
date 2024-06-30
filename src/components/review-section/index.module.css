@@ -1,0 +1,94 @@
+
+.articlecard {
+  display: flex;
+  padding: 0;
+}
+
+.ant-card .ant-card-body {
+  padding: 0;
+}
+
+.articles {
+  padding: 16px 20px;
+  position: relative;
+}
+
+.artitle {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+
+.article {
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.tags {
+  width: 316px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+.tagtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1f1f1f;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 13px 20px;
+}
+
+.tag {
+  padding: 20px;
+}
+
+.pic_total {
+  padding: 16px 20px;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.pics {
+  padding: 8px 20px;
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, 280px);
+  justify-content: space-between;
+}
+
+.pics img{
+  border-radius: 8px;
+}
+
+.pics :global(.pic-box){
+  position: relative;
+}
+
+.pics :global(.mask) {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 280px;
+  height: 210px;
+  top: 0;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.pics :global(.title) {
+  padding-top: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.pics :global(.tag) {
+  background: #E64A3C;
+  border-radius: 4px;
+  padding: 4px 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+}

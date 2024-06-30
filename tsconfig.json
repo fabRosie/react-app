@@ -13,5 +13,15 @@
     // 这是因为 allowImportingTsExtensions 主要用于控制导入路径，而不是影响编译输出。当你只生成声明文件（emitDeclarationOnly）或完全不生成任何输出（noEmit），可以安全地使用此选项。
      "noEmit": true,
      "jsx": "react-jsx",
-    }
-}
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "include": ["src", "global.d.ts"],
+    // include 字段告诉 TypeScript 编译器需要处理哪些文件。如果没有指定 include 字段，那么 TypeScript 编译器将会默认包含当前目录及其所有子目录中的 .ts、.tsx 和 .d.ts 文件。
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+  }

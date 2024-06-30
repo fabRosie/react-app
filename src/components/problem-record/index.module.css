@@ -1,0 +1,12 @@
+.tab {
+}
+
+.tab :global(.ant-tabs-nav .ant-tabs-nav-list) {
+  padding-left: 23px;
+}
+
+.tab :global(.ant-tabs-tab) {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  font-weight: bold;
+}

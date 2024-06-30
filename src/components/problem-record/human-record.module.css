@@ -1,0 +1,16 @@
+.human_tab {
+  padding: 8px 24px;
+}
+.human_tab :global(.ant-tabs-nav .ant-tabs-nav-list) {
+  padding-left: 0;
+}
+
+.human_tab :global(.ant-tabs-tab) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: normal;
+}
+
+.human_tab  :global(.ant-tabs-tab-active){
+  font-weight: bold;
+}
