@@ -16,7 +16,7 @@ const contentStyle: React.CSSProperties = {
   textAlign: "center",
   minHeight: 120,
   height: '100%',
-  lineHeight: "120px",
+  // lineHeight: "120px",
   color: "#fff",
   backgroundColor: "#0958d9",
   overflow: 'auto'

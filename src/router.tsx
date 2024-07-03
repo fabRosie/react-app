@@ -1,60 +1,49 @@
-import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import SearchPage from 'views/SearchPage';
+import React from 'react';
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Practice from './apps/practice';
-import Root from 'views/Root';
-import Translate from 'views/translate';
+import Root from 'src/main';
+import Translate from 'views/practice/translate';
+import Search from 'views/practice/search';
 
 // 引入组件
 // import Films from '../views/Films'
 
 const routes = [
   {
+    path: "/",
     element: <Root />,
-    path: "/", // with this data loaded before rendering
-    // loader: async ({ request, params }) => {
-    //   return fetch(
-    //     `/fake/api/teams/${params.teamId}.json`,
-    //     { signal: request.signal }
-    //   );
-    // },
-
-    // performing this mutation when data is submitted to it
-    action: async ({ request }) => {
-      // return updateFakeTeam(await request.formData());
-    },
     children: [
       {
+        index: true, // 根路径的默认子路由
         element: <Practice />,
-        path: '/',
+      },
+      {
+        path: "practice",
+        element: <Practice />,
         children: [
           {
+            index: true, // 默认子路由，不需要 path 属性
             element: <Translate />,
-            path: '/',
           },
           {
+            path: "translate",
             element: <Translate />,
-            path: '/practice',
           },
           {
-            element: <Translate />,
-            path: '/practice/translate',
+            path: "search",
+            element: <Search />,
           },
-          {
-            element: <Translate />,
-            path: '/practice/translate',
-          },
-        ]
+        ],
       },
-
-    ]
-    // and renders this element in case something went wrong
-    // errorElement: <ErrorBoundary />,
+      {
+        path: "root",
+        element: <Navigate to="/practice" replace />,
+      },
+    ],
   },
+];
 
-]
-
-const router = createBrowserRouter(routes)
+const router = createBrowserRouter(routes);
 
 export const Router = () => {
   return <RouterProvider router={router} />;

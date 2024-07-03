@@ -1,6 +1,7 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { FC, useState } from 'react';
 import ApprovePop from '../approve-pop';
+import { Checkbox } from 'antd';
 
 interface IReviewImageProps {
   title: string;
@@ -9,6 +10,10 @@ interface IReviewImageProps {
 
 const ReviewImage: FC<IReviewImageProps> = ({ title, addDescription }) => {
   const [showMask, setShowMask] = useState(false);
+
+  const onCheck = () => {
+    console.log('oncheck')
+  }
 
   return (
     <div className="pic-box" onMouseEnter={() => setShowMask(true)} onMouseLeave={() => setShowMask(false)}>

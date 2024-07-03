@@ -14,7 +14,7 @@ const items: MenuItem[] = [
   },
   {
     key: 'menu2',
-    label: <span>Search</span>,
+    label: <Link to='/practice/search'>Search</Link>,
   },
   // {
   //   key: 'sub1',

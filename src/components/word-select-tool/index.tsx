@@ -2,12 +2,12 @@ import { Tooltip } from 'antd';
 import { FC, useEffect, useState } from 'react';
 import styles from './index.module.css';
 import './index.module.css';
-// import { usePosition } from '@/hooks/use-position';
 import TranslateModal from '../translate-modal';
 import ProblemDescModal from '../problem-description-modal';
 
 interface ISelectedTranslationProps {
-  content: string;
+  contentSelector?: string;
+  // content: string;
 }
 
 export interface IPosition {
@@ -15,7 +15,7 @@ export interface IPosition {
   y: number;
 }
 
-const WordSelectTool: FC<ISelectedTranslationProps> = ({ content }) => {
+const WordSelectTool: FC<ISelectedTranslationProps> = ({contentSelector = 'body'}) => {
   const [isTranslateModalOpen, setIsTranslateModalOpen] = useState(false);
   const [isProblemModalOpen, setIsProblemModalOpen] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -24,7 +24,7 @@ const WordSelectTool: FC<ISelectedTranslationProps> = ({ content }) => {
   const [selection, setSelection] = useState<string>('');
 
   // 选中区域
-  const handleMouseUp = (event: any, element: HTMLElement | null, selectArea: HTMLElement | null) => {
+  const handleMouseUp = (event: any, element: HTMLElement | null, selectArea: Element | null) => {
     const selection = window.getSelection();
 
     if (selection && selection.toString().length > 0) {
@@ -51,7 +51,7 @@ const WordSelectTool: FC<ISelectedTranslationProps> = ({ content }) => {
 
   useEffect(() => {
     const toolBar = document.getElementById('toolbar');
-    const selectArea = document.getElementById('review-article');
+    const selectArea = document.querySelector(contentSelector);
 
     document.addEventListener('mouseup', (e) => handleMouseUp(e, toolBar, selectArea));
     return () => {
