@@ -13,8 +13,12 @@ const items: MenuItem[] = [
     icon: <HomeOutlined />
   },
   {
-    key: 'menu2',
+    key: '2',
     label: <Link to='/practice/search'>Search</Link>,
+  },
+  {
+    key: '3',
+    label: <Link to='/practice/pdf'>PDF</Link>,
   },
   // {
   //   key: 'sub1',

@@ -78,4 +78,4 @@ const Translate = () => {
   );
 };
 
-export default Translate;
+export const  Component = Translate;

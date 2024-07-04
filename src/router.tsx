@@ -2,8 +2,6 @@ import React from 'react';
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Practice from './apps/practice';
 import Root from 'src/main';
-import Translate from 'views/practice/translate';
-import Search from 'views/practice/search';
 
 // 引入组件
 // import Films from '../views/Films'
@@ -23,15 +21,21 @@ const routes = [
         children: [
           {
             index: true, // 默认子路由，不需要 path 属性
-            element: <Translate />,
+            lazy:()=>import('src/views/practice/translate')
+            // lazy:()=>(import('src/views/practice/translate'))
           },
           {
             path: "translate",
-            element: <Translate />,
+            lazy:()=>import('src/views/practice/translate')
+            // element: <Translate />,
           },
           {
             path: "search",
-            element: <Search />,
+            lazy:()=>import('src/views/practice/search')
+          },
+          {
+            path: "pdf",
+            lazy:()=>import('src/views/practice/pdf-viewer')
           },
         ],
       },
