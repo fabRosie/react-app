@@ -21,7 +21,7 @@ const routes = [
         children: [
           {
             index: true, // 默认子路由，不需要 path 属性
-            lazy:()=>import('src/views/practice/translate')
+            lazy:()=>import('views/practice/translate')
             // lazy:()=>(import('src/views/practice/translate'))
           },
           {

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "views/*": ["src/views/*"]
+      "views/*": ["src/views/*"],
+      "@/*": ["src/*"]
     },
      "esModuleInterop": true,
      //esModuleInterop 是 TypeScript 编译器中的一个选项，旨在改善与 CommonJS 和 AMD 模块的互操作性。它使得使用这些模块时的导入语法更接近原生 ES6 模块的体验，特别是在与默认导出（default export）和命名导出（named exports）之间的兼容性方面。
@@ -13,6 +14,13 @@
     // 这是因为 allowImportingTsExtensions 主要用于控制导入路径，而不是影响编译输出。当你只生成声明文件（emitDeclarationOnly）或完全不生成任何输出（noEmit），可以安全地使用此选项。
      "noEmit": true,
      "jsx": "react-jsx",
+     "module": "es2020", // 或者 "es2022", "esnext", "system", "node16", "nodenext"
+     "target": "es2020", // 目标编译的 ECMAScript 版本
+     "moduleResolution": "node",
+     "strict": true,
+     "skipLibCheck": true,
+     "forceConsistentCasingInFileNames": true
+
     },
     "plugins": [
       {
@@ -21,7 +29,4 @@
     ],
     "include": ["src", "global.d.ts"],
     // include 字段告诉 TypeScript 编译器需要处理哪些文件。如果没有指定 include 字段，那么 TypeScript 编译器将会默认包含当前目录及其所有子目录中的 .ts、.tsx 和 .d.ts 文件。
-    "paths": {
-      "@/*": ["./src/*"]
-    },
   }

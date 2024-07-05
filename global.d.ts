@@ -13,3 +13,8 @@ declare module '*.module.sass' {
   export default classes;
 }
 
+declare module '*.pdf' {
+  const value: string;
+  export default value;
+}
+
