@@ -598,7 +598,11 @@ module.exports = function (webpackEnv) {
             attributes: {as: 'font', type: 'font/woff2', crossorigin: true },
           },
           {
-            match: /.*\.css$/,
+            match: /\.chunk\.js$/,
+            attributes: {as: 'script' },
+          },
+          {
+            match: /\.chunk\.css$/,
             attributes: {as: 'style' },
           },
         ]
